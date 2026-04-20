@@ -5,31 +5,32 @@ on:
     paths:
       - "**/*.zip"
 
+# إضافة الصلاحيات عشان يقدر يعمل Push
+permissions:
+  contents: write
+
 jobs:
   unzip:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the repository
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # تحديث للإصدار الأحدث
 
-    # Find and unzip .zip files
     - name: Unzip files
       run: |
-        for file in $(find . -type f -name "*.zip"); do
-          # Create a folder named after the zip file (without .zip extension)
+
+        find . -type f -name "*.zip" | while read file; do
           folder="${file%.zip}"
           mkdir -p "$folder"
           unzip -o "$file" -d "$folder"
-          rm "$file" # Remove the original zip file
+          rm "$file"
         done
 
-    # Commit and push the changes
-    - name: Commit and push unzipped files
+    - name: Commit and push changes
       run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit -m "Unzipped newly uploaded files"
-        git push
+        # التريكه دي عشان لو مفيش تغييرات السكريبت ميفشلش
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Unzipped newly uploaded files" && git push)
