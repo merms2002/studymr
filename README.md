@@ -7,6 +7,14 @@
 **Study MR** is a high-performance management dashboard designed for students who operate like developers. It eliminates academic chaos by treating study modules as system components.
 
 > "Don't just study. Architect your knowledge."
+> <p align="center">
+<b>Developed by Seif & mohamed The Tech Team 🚀</b>
+
+
+<i>"Simplicity is the ultimate sophistication."</i>
+</p>
+
+> 
 
 ---
 
@@ -34,6 +42,9 @@ Built with the modern web stack for speed and type-safety:
 - **Integrated Sciences:** Specialized tracking for Geology and Chemistry.
 
 ---
+## 📄 License
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+
 
 ## 🗺️ Project Structure
 ```text
@@ -59,12 +70,5 @@ npm run dev
 
 ---
 
-## 📄 License
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
-
-<p align="center">
-<b>Developed by Seif & mohamed The Tech Team 🚀</b>
 
 
-<i>"Simplicity is the ultimate sophistication."</i>
-</p>
