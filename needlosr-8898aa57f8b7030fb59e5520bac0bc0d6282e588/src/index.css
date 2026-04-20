@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0D0D0D] text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply bg-[#141414] border border-[#262626] rounded-2xl p-6 transition-all duration-300;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-[#8C8C8C] hover:text-white hover:bg-[#1A1A1A] transition-all;
+  }
+
+  .sidebar-link.active {
+    @apply text-white bg-[#1A1A1A];
+  }
+
+  /* Custom Scrollbar */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-[#262626] rounded-full hover:bg-[#333333] transition-colors;
+  }
+
+  /* Animations */
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
