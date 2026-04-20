@@ -1,11 +1,11 @@
-name: Unzip Uploaded Files
+
+name: Unzip to Root
 
 on:
   push:
     paths:
       - "**/*.zip"
 
-# إضافة الصلاحيات عشان يقدر يعمل Push
 permissions:
   contents: write
 
@@ -15,15 +15,13 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4 # تحديث للإصدار الأحدث
+      uses: actions/checkout@v4
 
     - name: Unzip files
       run: |
-
         find . -type f -name "*.zip" | while read file; do
-          folder="${file%.zip}"
-          mkdir -p "$folder"
-          unzip -o "$file" -d "$folder"
+          # فك الضغط في المسار الرئيسي
+          unzip -o "$file" -d "."
           rm "$file"
         done
 
@@ -32,5 +30,4 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        # التريكه دي عشان لو مفيش تغييرات السكريبت ميفشلش
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Unzipped newly uploaded files" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Unzipped files to root" && git push)
