@@ -1,74 +1,20 @@
-# 📊 Study MR | <kbd>The Smart Learning OS</kbd>
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-![Banner](https://img.shields.io/badge/Architecture-Minimalist%20Dark-000?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Under%20Development-orange?style=for-the-badge)
+# Run and deploy your AI Studio app
 
-## ✨ Overview
-**Study MR** is a high-performance management dashboard designed for students who operate like developers. It eliminates academic chaos by treating study modules as system components.
+This contains everything you need to run your app locally.
 
-> "Don't just study. Architect your knowledge."
-> <p align="center">
-<b>Developed by Seif & mohamed The Tech Team 🚀</b>
+View your app in AI Studio: https://ai.studio/apps/f2f2bc25-d08a-46fe-8525-50a3f4f5f3f7
 
+## Run Locally
 
-<i>"Simplicity is the ultimate sophistication."</i>
-</p>
-
-> 
-
----
-
-## 🛠️ Tech Stack
-Built with the modern web stack for speed and type-safety:
-- **Framework:** React 18 + Vite
-- **Language:** TypeScript (Strict Mode)
-- **Styling:** Tailwind CSS (Glassmorphism Effects)
-- **Data Structure:** JSON-based Curriculum Mapping
-
----
-
-## 🚀 Key Features (Modules)
-
-### 📂 01. The Curriculum Engine
-- **JSON Driven:** Entire subjects (Japanese, Italian, Physics) are stored as structured data.
-- **Dynamic Progress:** Real-time tracking of completed modules vs. pending backlog.
-
-### ⏱️ 02. Execution System
-- **Pomodoro Protocol:** 50/10 focus sessions integrated into the UI.
-- **Sprint Management:** Organize your study day into high-intensity "Sprints."
-
-### 🧠 03. Knowledge Base
-- **Multi-Language Support:** Dedicated modules for Japanese (20 levels), Italian, and IELTS prep.
-- **Integrated Sciences:** Specialized tracking for Geology and Chemistry.
-
----
-## 📄 License
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+**Prerequisites:**  Node.js
 
 
-## 🗺️ Project Structure
-```text
-Study-MR/
-├── src/
-│   ├── components/      # Glassmorphic UI Elements
-│   ├── data/           # JSON Schemas (Japanese.json, IELTS.json)
-│   ├── hooks/          # Custom Progress Logic
-│   └── styles/         # Tailwind Configuration
-└── public/             # System Assets
-Installation & Setup
-
-To run your local instance of Study MR:
-# Clone the repository
-git tree clone [https://github.com/seif15062010-stack/study-mr.git](https://github.com/seif15062010-stack/study-mr.git)
-
-# Install dependencies
-npm install
-
-# Start the Development Server
-npm run dev
-
-
----
-
-
-
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
